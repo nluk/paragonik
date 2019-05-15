@@ -26,6 +26,10 @@ export class DashboardPage implements OnInit {
     }
   }
 
+  addItem() {
+    this.navCtrl.navigateForward('push-receipt');
+  }
+
   logout() {
     this.authService.logoutUser()
       .then(res => {

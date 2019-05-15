@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dodaj paragon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nazwa</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <div *ngIf="base64image != null; else imgTaken">
+
+    <ion-button (click)="takePicture()">ZRÓB ZDJĘCIE</ion-button>
+  </div>
+
+  <ng-template #imgTaken>
+    <ion-img [src]='"data:image/jpeg;base64,"+base64image'></ion-img>
+    <ion-button (click)="takePicture()">POWTÓRZ</ion-button>
+    <ion-button (click)="sendToFirebase()" color="success">PRZEŚLIJ</ion-button>
+  </ng-template>
+
+</ion-content>
