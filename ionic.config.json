@@ -1,5 +1,7 @@
 {
   "name": "paragonik",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
