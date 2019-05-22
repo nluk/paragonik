@@ -5,17 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
+  <ion-item style="margin: 3%">
     <ion-label position="floating">Nazwa</ion-label>
     <ion-input type="text"></ion-input>
   </ion-item>
-  <div *ngIf="base64image == null; else imgTaken">
+  <div *ngIf="base64image == null; else imgTaken" style="margin: 0 3% 0 3%">
 
     <ion-button (click)="takePicture()">ZRÓB ZDJĘCIE</ion-button>
   </div>
 
-  <ng-template #imgTaken>
-    <ion-img [src]='"data:image/jpeg;base64,"+base64image'></ion-img>
+  <ng-template #imgTaken style="margin: 0 3% 0 3%">
+    <ion-img [src]='base64image'></ion-img>
     <ion-button (click)="takePicture()">POWTÓRZ</ion-button>
     <ion-button (click)="sendToFirebase()" color="success">PRZEŚLIJ</ion-button>
   </ng-template>
