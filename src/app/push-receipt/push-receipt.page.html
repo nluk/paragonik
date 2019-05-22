@@ -9,7 +9,7 @@
     <ion-label position="floating">Nazwa</ion-label>
     <ion-input type="text"></ion-input>
   </ion-item>
-  <div *ngIf="base64image != null; else imgTaken">
+  <div *ngIf="base64image == null; else imgTaken">
 
     <ion-button (click)="takePicture()">ZRÓB ZDJĘCIE</ion-button>
   </div>
