@@ -5,19 +5,25 @@
 </ion-header>
 
 <ion-content>
+  <ion-input readonly [(ngModel)]="status"></ion-input>
   <ion-item style="margin: 3%">
-    <ion-label position="floating">Nazwa</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label position="floating">Tytuł</ion-label>
+    <ion-input type="text" clearInput [(ngModel)]="receiptTitle"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Opis</ion-label>
+    <ion-input type="text" clearInput [(ngModel)]="receiptDescription"></ion-input>
   </ion-item>
   <div *ngIf="base64image == null; else imgTaken" style="margin: 0 3% 0 3%">
-
     <ion-button (click)="takePicture()">ZRÓB ZDJĘCIE</ion-button>
   </div>
 
   <ng-template #imgTaken style="margin: 0 3% 0 3%">
-    <ion-img [src]='base64image'></ion-img>
+    <ion-img style="margin: 15%" [src]='base64image'></ion-img>
     <ion-button (click)="takePicture()">POWTÓRZ</ion-button>
-    <ion-button (click)="sendToFirebase()" color="success">PRZEŚLIJ</ion-button>
+    <ion-button (click)="upload()" color="success">PRZEŚLIJ</ion-button>
   </ng-template>
+
+
 
 </ion-content>

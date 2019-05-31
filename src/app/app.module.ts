@@ -13,6 +13,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import * as firebase from 'firebase';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +27,15 @@ firebase.initializeApp(environment.firebase);
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ReactiveFormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireAuthModule],
+  imports: [
+    ReactiveFormsModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule],
   providers: [
     StatusBar,
     SplashScreen,
