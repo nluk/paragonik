@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
   { path: 'push-receipt', loadChildren: './push-receipt/push-receipt.module#PushReceiptPageModule' },
+  { path: 'receipt-details', loadChildren: './receipt-details/receipt-details.module#ReceiptDetailsPageModule' },
 ];
 
 @NgModule({

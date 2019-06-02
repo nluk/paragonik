@@ -22,8 +22,7 @@ export class ReceiptService {
             .collection('user_receipts')
             .doc(userEmail)
             .collection('receipts')
-            .add(receipt.getData())
-
+            .add(receipt.getData());
     }
 
     read_Receipts(userEmail: string) {
@@ -32,6 +31,14 @@ export class ReceiptService {
             .doc(userEmail)
             .collection('receipts')
             .snapshotChanges();
+    }
+
+    delete_Receipt(receipt: any, userEmail: string) {
+        return this.firestore
+            .collection('user_receipts')
+            .doc(userEmail)
+            .collection('receipts')
+            .doc(receipt.id).delete();
     }
 
     // update_Student(recordID, record) {

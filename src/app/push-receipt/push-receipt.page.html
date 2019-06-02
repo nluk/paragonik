@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToDashboard()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Dodaj paragon</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +15,7 @@
     <ion-label position="floating">Tytuł</ion-label>
     <ion-input type="text" clearInput [(ngModel)]="receiptTitle"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item style="margin: 3%">
     <ion-label position="floating">Opis</ion-label>
     <ion-input type="text" clearInput [(ngModel)]="receiptDescription"></ion-input>
   </ion-item>

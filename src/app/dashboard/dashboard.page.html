@@ -22,16 +22,18 @@
     </ion-row>
   </ion-grid>
 
-  <ion-card *ngFor="let receipt of receipts">
-    <ion-card-header>
-      <ion-card-title>{{receipt.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-thumbnail slot="start">
-        <ion-img [src]="receipt.imageURL"></ion-img>
-      </ion-thumbnail>
-    </ion-card-content>
-  </ion-card>
+  <div *ngFor="let receipt of receipts">
+    <ion-card (click)="goToDetails(receipt)">
+      <ion-card-header>
+        <ion-card-title>{{receipt.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-thumbnail slot="start">
+          <ion-img [src]="receipt.imageURL"></ion-img>
+        </ion-thumbnail>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 
 </ion-content>

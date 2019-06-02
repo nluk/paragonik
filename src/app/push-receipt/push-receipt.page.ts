@@ -64,8 +64,7 @@ export class PushReceiptPage implements OnInit {
         .then(this.onImageUploadSuccess, this.onError)
         .then(this.storeReceipt, this.onError)
         .then(this.gotDocument, this.onError)
-
-
+      this.navCtrl.navigateBack('dashboard')
     }
   }
 
@@ -115,6 +114,9 @@ export class PushReceiptPage implements OnInit {
 
 
 
+  goToDashboard() {
+    this.navCtrl.navigateForward('dashboard');
+  }
 
 
 }

@@ -3,6 +3,7 @@ import { NavController, ModalController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authentication.service';
 import { ReceiptService } from './../services/receipt.service';
 import { Receipt } from 'src/app/push-receipt/receipt'
+import { NavParamsService } from '../nav-params.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +19,7 @@ export class DashboardPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private receiptService: ReceiptService,
+    private navParamsService: NavParamsService,
     private authService: AuthenticateService
   ) { }
 
@@ -52,6 +54,11 @@ export class DashboardPage implements OnInit {
 
   addItem() {
     this.navCtrl.navigateForward('push-receipt');
+  }
+
+  goToDetails(receipt: object) {
+    this.navParamsService.receipt = receipt;
+    this.navCtrl.navigateForward('receipt-details');
   }
 
   logout() {

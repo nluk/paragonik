@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToDashboard()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="secondary">
+      <ion-button (click)="deleteReceipt()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{receipt.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      {{receipt.description}}
+      <ion-img [src]="receipt.imageURL"></ion-img>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
